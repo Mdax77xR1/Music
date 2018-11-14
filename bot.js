@@ -356,7 +356,7 @@ j = 1;
 });
 
 
-onst adminprefix = "R";
+const adminprefix = "R";
 const devs = ['335484868479811584 '];
 client.on('message', message => {
   var argresult = message.content.split(` `).slice(1).join(' ');
