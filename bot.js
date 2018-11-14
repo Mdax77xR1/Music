@@ -22,7 +22,7 @@ client.user.setGame(`صيآنة`,"http://twitch.tv/S-F")
   console.log('╚[════════════]╝')
   console.log('')
   console.log('')
-});
+
 
 const Util = require('discord.js');
 
