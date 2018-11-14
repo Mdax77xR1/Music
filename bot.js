@@ -1,4 +1,3 @@
-const prefix = 'R'
 const Discord = require('discord.js');
 
 const Util = require('discord.js');
@@ -19,6 +18,9 @@ const fs = require('fs');
 
 const gif = require("gif-search");
 
+const client = new Discord.Client({disableEveryone: true});
+
+const prefix = "R";
 
 /////////////////////////
 ////////////////////////
