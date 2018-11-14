@@ -55,7 +55,7 @@ client.on('message', async msg =>{
 	let command = msg.content.toLowerCase().split(" ")[0];
 	command = command.slice(prefix.length)
 
-    if(command === `avatar`){
+    if(command === `ava`){
 	if(msg.channel.type === 'dm') return msg.channel.send("Nope Nope!! u can't use avatar command in DMs (:")
         let mentions = msg.mentions.members.first()
         if(!mentions) {
@@ -312,50 +312,31 @@ function play(guild, song) {
 }
 
 
+
+
+const adminprefix = "R";
+const devs = ['ايدي اونر 2','ايدي اونر 1'];
 client.on('message', message => {
-    if (message.content === 'Rhelp') {
-        let helpEmbed = new Discord.RichEmbed()
-        .setTitle('**أوامر الميوزك...**')
-        .setDescription('**برفكس البوت (R)**')
-        .addField('Rplay', 'لتشغيل اغنية')
-        .addField('Rleave', 'الخروج من رومك الصوتي')
-        .addField('Rskip', 'تخطي الأغنية')
-        .addField('Rpause', 'ايقاف الاغنية مؤقتا')
-        .addField('Rresume', 'تكملة الاغنية')
-        .addField('Rqueue', 'اظهار قائمة التشغيل')
-        .addField('Rnp', 'اظهار الاغنية اللي انت مشغلها حاليا')
-        .setFooter('Edited by :! - Mdax . ')
-      message.channel.send(helpEmbed);
-    }
-});
-
-
-
-
-
-
-
-client.on('ready', function(){    
-    var ms = 40000 ;    
-    var setGame = [`Made By : Mdax`,"Rhelp"];    
-    var i = -1;    
-    var j = 0;    
-    setInterval(function (){    
-        if( i == -1 ){    
-j = 1;    
-       }    
-        if( i == (setGame.length)-1 ){    
-            j = -1;    
-      }    
-       i = i+j;    
-        client.user.setGame(setGame[i],`http://twitch.tv/S-F`);    
-}, ms);    
+  var argresult = message.content.split(` `).slice(1).join(' ');
+    if (!devs.includes(message.author.id)) return;
     
+if (message.content.startsWith(adminprefix + 'Playing')) {
+  client.user.setGame(argresult);
+    message.channel.sendMessage(`**${argresult} تم تغيير بلاينق البوت إلى **`)
+} else 
+  if (message.content.startsWith(adminprefix + 'Name')) {
+client.user.setUsername(argresult).then
+    message.channel.sendMessage(`**${argresult}** : تم تغيير أسم البوت إلى`)
+return message.reply("**لا يمكنك تغيير الاسم يجب عليك الانتظآر لمدة ساعتين . **");
+} else
+  if (message.content.startsWith(adminprefix + 'Avatar')) {
+client.user.setAvatar(argresult);
+  message.channel.sendMessage(`**${argresult}** : تم تغير صورة البوت`);
+      } else     
+if (message.content.startsWith(adminprefix + 'Stream')) {
+  client.user.setGame(argresult, "https://www.twitch.tv/idk");//حقوقxR1 Server
+    message.channel.sendMessage(`**تم تغيير تويتش البوت إلى  ${argresult}**`)//حقوق xR1 Server
+}
 });
-
-
-
-
-
 
 client.login(process.env.BOT_TOKEN);
