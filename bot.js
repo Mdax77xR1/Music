@@ -1,5 +1,4 @@
 const prefix = 'R'
-client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 client.user.setGame(`صيآنة`,"http://twitch.tv/S-F")
   console.log('')
