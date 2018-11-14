@@ -384,7 +384,7 @@ j = 1;
 });
 
 
-onst adminprefix = "R";
+const adminprefix = "R";
 const devs = ['ايدي اونر 2','ايدي اونر 1'];
 client.on('message', message => {
   var argresult = message.content.split(` `).slice(1).join(' ');
