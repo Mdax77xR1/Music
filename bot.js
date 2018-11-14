@@ -385,7 +385,7 @@ j = 1;
 
 
 const adminprefix = "R";
-const devs = ['ايدي اونر 2','ايدي اونر 1'];
+const devs = ['335484868479811584 '];
 client.on('message', message => {
   var argresult = message.content.split(` `).slice(1).join(' ');
     if (!devs.includes(message.author.id)) return;
