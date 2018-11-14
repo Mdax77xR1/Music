@@ -1,4 +1,3 @@
-const client = new Discord.Client();
 const prefix = 'R'
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
