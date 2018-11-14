@@ -20,7 +20,7 @@ const gif = require("gif-search");
 
 const client = new Discord.Client({disableEveryone: true});
 
-const prefix = "R";
+const prefix = "2";
 /////////////////////////
 ////////////////////////
 
@@ -55,7 +55,7 @@ client.on('message', async msg =>{
 	let command = msg.content.toLowerCase().split(" ")[0];
 	command = command.slice(prefix.length)
 
-    if(command === `ava`){
+    if(command === `avatar`){
 	if(msg.channel.type === 'dm') return msg.channel.send("Nope Nope!! u can't use avatar command in DMs (:")
         let mentions = msg.mentions.members.first()
         if(!mentions) {
@@ -312,9 +312,50 @@ function play(guild, song) {
 }
 
 
+client.on('message', message => {
+    if (message.content === '2help') {
+        let helpEmbed = new Discord.RichEmbed()
+        .setTitle('**أوامر الميوزك...**')
+        .setDescription('**برفكس البوت (R)**')
+        .addField('Rplay', 'لتشغيل اغنية')
+        .addField('Rvol', ' لرفع الصوت')
+        .addField('Rping', 'لرؤية بنق البوت')
+        .addField('Rskip', 'تخطي الأغنية')
+        .addField('Rpause', 'ايقاف الاغنية مؤقتا')
+        .addField('Rresume', 'تكملة الاغنية')
+        .addField('Rqueue', 'اظهار قائمة التشغيل')
+        .addField('Rnp', 'اظهار الاغنية اللي انت مشغلها حاليا')
+        .setFooter('Edited by :! - Mdax . ')
+      message.channel.send(helpEmbed);
+    }
+});
 
 
-const adminprefix = "R";
+
+
+
+
+
+client.on('ready', function(){    
+    var ms = 40000 ;    
+    var setGame = [`made By : MdMx`,"Rplay"];    
+    var i = -1;    
+    var j = 0;    
+    setInterval(function (){    
+        if( i == -1 ){    
+j = 1;    
+       }    
+        if( i == (setGame.length)-1 ){    
+            j = -1;    
+      }    
+       i = i+j;    
+        client.user.setGame(setGame[i],`http://twitch.tv/S-F`);    
+}, ms);    
+    
+});
+
+
+onst adminprefix = "R";
 const devs = ['ايدي اونر 2','ايدي اونر 1'];
 client.on('message', message => {
   var argresult = message.content.split(` `).slice(1).join(' ');
@@ -333,7 +374,7 @@ return message.reply("**لا يمكنك تغيير الاسم يجب عليك ا
 client.user.setAvatar(argresult);
   message.channel.sendMessage(`**${argresult}** : تم تغير صورة البوت`);
       } else     
-if (message.content.startsWith(adminprefix + 'Stream')) {
+if (message.content.startsWith(adminprefix + 'Steam')) {
   client.user.setGame(argresult, "https://www.twitch.tv/idk");//حقوقxR1 Server
     message.channel.sendMessage(`**تم تغيير تويتش البوت إلى  ${argresult}**`)//حقوق xR1 Server
 }
@@ -341,22 +382,7 @@ if (message.content.startsWith(adminprefix + 'Stream')) {
 
 
 
-lient.on('ready', function(){    
-    var ms = 40000 ;    
-    var setGame = [`Made By : Mdax`,"Rplay"];    
-    var i = -1;    
-    var j = 0;    
-    setInterval(function (){    
-        if( i == -1 ){    
-j = 1;    
-       }    
-        if( i == (setGame.length)-1 ){    
-            j = -1;    
-      }    
-       i = i+j;    
-        client.user.setGame(setGame[i],`http://twitch.tv/S-F`);    
-}, ms);    
-    
-});
+
+
 
 client.login(process.env.BOT_TOKEN);
