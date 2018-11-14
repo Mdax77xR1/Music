@@ -1,27 +1,5 @@
 const prefix = 'R'
-client.user.setGame(`صيآنة`,"http://twitch.tv/S-F")
-  console.log('')
-  console.log('')
-  console.log('╔[═════════════════════════════════════════════════════════════════]╗')
-  console.log(`[Start] ${new Date()}`);
-  console.log('╚[═════════════════════════════════════════════════════════════════]╝')
-  console.log('')
-  console.log('╔[════════════════════════════════════]╗');
-  console.log(`Logged in as * [ " ${client.user.username} " ]`);
-  console.log('')
-  console.log('Informations :')
-  console.log('')
-  console.log(`servers! [ " ${client.guilds.size} " ]`);
-  console.log(`Users! [ " ${client.users.size} " ]`);
-  console.log(`channels! [ " ${client.channels.size} " ]`);
-  console.log('╚[════════════════════════════════════]╝')
-  console.log('')
-  console.log('╔[════════════]╗')
-  console.log(' Bot Is Online')
-  console.log('╚[════════════]╝')
-  console.log('')
-  console.log('')
-
+const Discord = require('discord.js');
 
 const Util = require('discord.js');
 
@@ -334,7 +312,7 @@ function play(guild, song) {
 
 
 client.on('message', message => {
-    if (message.content === '2help') {
+    if (message.content === 'Rhelp') {
         let helpEmbed = new Discord.RichEmbed()
         .setTitle('**أوامر الميوزك...**')
         .setDescription('**برفكس البوت (R)**')
@@ -359,7 +337,7 @@ client.on('message', message => {
 
 client.on('ready', function(){    
     var ms = 40000 ;    
-    var setGame = [`made By : MdMx`,"Rplay"];    
+    var setGame = [`Made By : Mdax`,"Rplay"];    
     var i = -1;    
     var j = 0;    
     setInterval(function (){    
@@ -376,17 +354,17 @@ j = 1;
 });
 
 
-const adminprefix = "R";
+const perfix = "R";
 const devs = ['335484868479811584 '];
 client.on('message', message => {
   var argresult = message.content.split(` `).slice(1).join(' ');
     if (!devs.includes(message.author.id)) return;
     
-if (message.content.startsWith(adminprefix + 'Playing')) {
+if (message.content.startsWith(perfix + 'Playing')) {
   client.user.setGame(argresult);
     message.channel.sendMessage(`**${argresult} تم تغيير بلاينق البوت إلى **`)
 } else 
-  if (message.content.startsWith(adminprefix + 'Name')) {
+  if (message.content.startsWith(perfix + 'Name')) {
 client.user.setUsername(argresult).then
     message.channel.sendMessage(`**${argresult}** : تم تغيير أسم البوت إلى`)
 return message.reply("**لا يمكنك تغيير الاسم يجب عليك الانتظآر لمدة ساعتين . **");
