@@ -359,5 +359,23 @@ j = 1;
 
 
 
+client.on('ready', () => {
+   console.log(`----------------`);
+      console.log(`R1play🎵`);
+        console.log(`----------------`);
+      console.log(`ON ${client.guilds.size} Servers '     R1play🎵' `);
+    console.log(`----------------`);
+  console.log(`Logged in as ${client.user.tag}!`);
+client.user.setGame(`R1play🎵`,"https://www.twitch.tv/Mdax77xR1")
+client.user.setStatus("online")
+ 
+});
+
+
+
+
+
+
+
 
 client.login(process.env.BOT_TOKEN);
