@@ -15,7 +15,7 @@ const Util = require('discord.js');
 
 client.on('message', msg => {
   if (msg.content.startsWith('Rplay')) {
-    msg.channel.send('Use R3play');
+    msg.channel.send('Use R1play');
   }
 });
 
@@ -49,7 +49,7 @@ client.channels.get("467833183254347797").sendEmbed(embed)
 });
  
 
-var prefix = "R3"
+var prefix = "R1"
 client.on('message', async msg => { 
 	if (msg.author.bot) return undefined;
 	if (!msg.content.startsWith(prefix)) return undefined;
@@ -240,7 +240,7 @@ function play(guild, song) {
 
 client.on('ready', () => {
    console.log(`----------------`);
-      console.log(`R1play🎵`);
+      console.log(`R2play🎵`);
         console.log(`----------------`);
       console.log(`ON ${client.guilds.size} Servers '     R3play🎵' `);
     console.log(`----------------`);
@@ -256,7 +256,7 @@ client.user.setStatus("online")
 
 
 client.on('message', message => {
-    if (message.content === 'R3help') {
+    if (message.content === 'R1help') {
         let helpEmbed = new Discord.RichEmbed()
         .setTitle('**أوامر الميوزك...**')
         .addField('R1', 'برفكس البوت')
