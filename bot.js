@@ -379,10 +379,9 @@ client.on('message', message => {
         if(!message.channel.guild) return;
         var Bping =`${Math.round(client.ping)}`
         const E1ping = new Discord.RichEmbed()
-        .setTitle('ـــــــــــــــ')
-        .addField(`**BOT Ping Is :_${Bping}📶_`," ً ")
+        .setTitle('ــــــــــــــــــــــــــــــ')
+        .addField(`**BOT Ping Is :__${Bping}📶__`,"ــــــــــــــــــــــــــــــ")
         .setFooter(`Requested by | ${message.author.tag}`)
-        .addField('ـــــــــــــــ'," ِ ")
         .setColor('RANDOM')
         message.channel.send(E1ping);
     }
