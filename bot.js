@@ -378,7 +378,7 @@ client.on('message', message => {
         if (message.author.bot) return;
         if(!message.channel.guild) return;
         var Bping =`${Math.round(client.ping)}`
-        const E1ping = new discord.RichEmbed()
+        const E1ping = new Discord.RichEmbed()
         .setTitle('ـــــــــــــــ')
         .addFiled(`**BOT Ping Is :${_Bping_}📶`," ً ")
         .setFooter(`Requested by | ${msg.author.tag}`)
