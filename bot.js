@@ -380,7 +380,7 @@ client.on('message', message => {
         var Bping =`${Math.round(client.ping)}`
         const E1ping = new Discord.RichEmbed()
         .setTitle('ـــــــــــــــ')
-        .addFiled(`**BOT Ping Is :_${Bping}📶_`," ً ")
+        .addField(`**BOT Ping Is :_${Bping}📶_`," ً ")
         .setFooter(`Requested by | ${msg.author.tag}`)
         .addField('ـــــــــــــــ'," ِ ")
         .setcolor(RANDOM)
