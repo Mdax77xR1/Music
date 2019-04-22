@@ -381,7 +381,7 @@ client.on('message', message => {
         const E1ping = new Discord.RichEmbed()
         .setTitle('ـــــــــــــــ')
         .addField(`**BOT Ping Is :_${Bping}📶_`," ً ")
-        .setFooter(`Requested by | ${msg.author.tag}`)
+        .setFooter(`Requested by | ${message.author.tag}`)
         .addField('ـــــــــــــــ'," ِ ")
         .setcolor(RANDOM)
         message.channel.send(E1ping);
