@@ -383,7 +383,7 @@ client.on('message', message => {
         .addField(`**BOT Ping Is :_${Bping}📶_`," ً ")
         .setFooter(`Requested by | ${message.author.tag}`)
         .addField('ـــــــــــــــ'," ِ ")
-        .setcolor(RANDOM)
+        .setcolor('RANDOM')
         message.channel.send(E1ping);
     }
 });
