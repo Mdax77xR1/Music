@@ -374,7 +374,7 @@ client.user.setStatus("online")
 
 client.on('message', message => {
     if(!message.channel.guild) return;
-    if(message.content.startswith('^ping')) {
+    if(message.content.startsWith('^ping')) {
         if (message.author.bot) return;
         if(!message.channel.guild) return;
         var Bping =`${Math.round(client.ping)}`
