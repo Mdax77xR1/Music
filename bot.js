@@ -372,7 +372,21 @@ client.user.setStatus("online")
 });
 
 
-
+client.on('message', message => {
+    if(!message.channel.guild) return;
+    if(message.content.startswith('^ping')) {
+        if (message.author.bot) return;
+        if(!message.channel.guild) return;
+        var Bping =`${Math.round(client.ping)}`
+        const E1ping = new discord.RichEmbed()
+        .setTitle('ـــــــــــــــ')
+        .addFiled(`**BOT Ping Is :${_Bping_}📶`," ً ")
+        .setFooter(`Requested by | ${msg.author.tag}`)
+        .addField('ـــــــــــــــ'," ِ ")
+        .setcolor(RANDOM)
+        message.channel.send(E1ping);
+    }
+});
 
 
 client.login(process.env.BOT_TOKEN);
